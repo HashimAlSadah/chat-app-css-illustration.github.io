@@ -1,0 +1,49 @@
+@use "./var";
+@use "./mixin";
+.CTA{
+    text-align: center;
+    margin: 3em 2em 2em;
+}
+
+.CTA__title{
+    font-size: 2.2rem;
+    color: var.$very-dark-desaturated-violet;
+    font-weight: 500;
+}
+
+.CTA__body{
+    margin: 0.75em auto 0;
+    line-height: 1.5;
+    color: var.$dark-grayish-violet;
+    max-width: 400px;
+}
+
+@include mixin.screenStyleMinWidth(var.$desktop-break-point){
+    .CTA{
+        text-align: left;
+    }
+
+    .CTA__title{
+        font-size: clamp(2.2rem, 3vw, 3.5rem);
+    }
+
+    .CTA__body{
+        margin: 1.25em auto 0;
+        max-width: 450px;
+        line-height: 1.7;
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+    }
+}
+
+@include mixin.screenStyleMinWidth(var.$desktop-second-break-point){
+    .CTA__body{
+        max-width: 520px;
+    }
+}
+
+@include mixin.screenStyleMinWidth(1400px){
+    .CTA__body{
+        max-width: 600px;
+    }
+}
+

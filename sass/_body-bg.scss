@@ -1,0 +1,66 @@
+@use "./var";
+@use "./mixin";
+
+body{
+    position: relative;
+    min-height: 100vh;
+    background-color: rgba(250, 250, 250, 1);
+    padding-top: 3.5em;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0em;
+    width: 50%;
+    max-width: 400px;
+    height: 60%;
+    min-height: 500px;
+    background-image: linear-gradient(to top, var.$gradient-light-violet, var.$gradient-light-magenta);
+    border-bottom-right-radius: 40em;
+    z-index: -1;
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0em;
+    width: 50%;
+    max-width: 400px;
+    height: 45%;
+    min-height: 280px;
+    background-color: rgba(249, 244, 250, 1);
+    border-top-left-radius: 40em;
+    z-index: -1;
+}
+
+@include mixin.screenStyleMinWidth(var.$desktop-break-point){
+    body{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        padding-top: unset; 
+    }
+}
+
+@include mixin.screenStyleMinWidth(var.$desktop-second-break-point){
+    body::before{
+        width: 35%;
+        height: 90%;
+        left: -7%;
+        max-width: unset;
+        border-bottom-right-radius: 20em;
+        border-bottom-left-radius: 20em;
+    }
+
+    body::after{
+        // right: -00%;
+        width: 22%;
+        max-width: unset;
+        height: 90%;
+        border-top-right-radius: 00em;
+    }
+}
+
+

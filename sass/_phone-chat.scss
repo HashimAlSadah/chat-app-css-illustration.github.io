@@ -1,0 +1,80 @@
+@use "./var";
+
+.phone__chat{
+    padding: 1em;
+}
+
+.chat-bubble{
+    max-width: 65%;
+    margin: 1em 0;
+    padding: 0.65em 0.95em;
+    border-radius: 1em;
+    line-height: 1.3;
+} 
+
+.left-chat{
+    background-color: rgba(237, 229, 244, 1);
+    color: var.$moderate-violet;
+    border-bottom-left-radius: 0.25em;
+}
+
+.right-chat{
+    background-color: white;
+    color: var.$desaturated-dark-violet;
+    border-bottom-right-radius: 0.25em;
+    margin-left: auto;
+}
+
+.right-chat.small-bubble{
+    max-width: max-content;
+}
+
+.chat-images{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5em;
+    margin: 1.0em 0;
+}
+
+.chat-images img{
+    border-radius: 1em;
+}
+
+.price-bubble{
+    @extend .chat-bubble, .left-chat;
+    position: relative;
+    max-width: 75%;
+    display: flex;
+    align-items: center;
+    padding: 1em 0.95em;
+    background-image: linear-gradient(to left, var.$gradient-light-violet, var.$gradient-light-magenta);
+    color: white;
+}
+
+.price-bubble::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 6.5%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 0.5px solid rgba(white, 0.7);
+    transform: translate(0%, -50%);
+}
+
+.price-bubble p:first-child{
+    position: relative;
+    color: rgba(white, 0.7);
+    margin-left: 2em;
+}
+
+
+.price-bubble .dollars{
+    margin-left: auto;
+    margin-right: 0.5em;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+

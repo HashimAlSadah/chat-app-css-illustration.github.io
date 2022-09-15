@@ -1,0 +1,87 @@
+@use "./var";
+
+.phone__top{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.5em 1.75em 1.5em;
+    background-image: linear-gradient(to right, var.$gradient-light-violet, var.$gradient-light-magenta);
+    border-radius: inherit;
+    border-bottom-right-radius: 0.45em;
+    border-bottom-left-radius: 0.45em;
+    color: white;
+}
+
+.phone__top::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 55%;
+    height: 27px;
+    background-color: white;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    transform: translateX(-50%);
+}
+
+.phone .personal-info{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    margin-left: 1.5em;
+}
+
+.phone .personal-info::before,
+.phone .personal-info::after{
+    content: "";
+    position: absolute;
+    left: -10%;
+    width: 8px;
+    height: 2.5px;
+    background-color: white;
+    transform-origin: left;
+    transform: rotate(-55deg) translateY(1px);
+}
+
+.phone .personal-info::after{
+    transform: rotate(55deg) translateY(-1px);
+}
+
+
+
+
+
+.phone__top img{
+    border-radius: 50%;
+    border: 1.5px solid white;
+    max-width: 35px;
+}
+
+.personal-info .name{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.personal-info .status{
+    font-size: 0.7rem;
+    color: rgba(white, 0.5)
+}
+
+.vertical-dots{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5px;
+    width: max-content;
+}
+
+.vertical-dots span{
+    width: 3.5px;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+}
+
+

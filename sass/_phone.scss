@@ -1,0 +1,32 @@
+@use"./var";
+@use "./mixin";
+
+.phone{
+    max-width: 250px;
+    background-color: white;
+    margin: 0em auto 5em;
+    padding: 0.8em;
+    border-radius: 2em;
+    font-size: 0.56rem;
+}
+
+.phone-wraper{
+    background-color: var.$app-background;
+    border-radius: inherit;
+    padding-bottom: 1em;
+}
+
+@include mixin.screenStyleMinWidth(var.$desktop-break-point){
+    .phone{
+        margin: 0em 0 0em;
+    }
+}
+
+@include mixin.screenStyleMinWidth(var.$desktop-second-break-point){
+    .phone{
+        max-width: 300px;
+        font-size: 0.65rem;
+    }
+}
+
+
